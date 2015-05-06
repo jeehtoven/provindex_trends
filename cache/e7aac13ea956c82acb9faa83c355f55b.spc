@@ -1,0 +1,1 @@
+a:3:{s:3:"url";s:119:"https://news.google.com/news/section?pz=1&cf=all&q=%22beer%20sales%22&siidp=fa73e2cd0d72d7414c2c2a7f615529ab692b&ict=ln";s:8:"feed_url";s:88:"http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&q=%5Cx22beer+sales%5Cx22&output=rss";s:5:"build";s:14:"20150504233014";}
