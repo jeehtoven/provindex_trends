@@ -1,0 +1,4 @@
+[06-May-2015 12:25:36 America/Denver] PHP Parse error:  syntax error, unexpected '{' in /home5/jeehtove/public_html/provindex/trends/indicators.php on line 13
+[06-May-2015 12:28:31 America/Denver] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home5/jeehtove/public_html/provindex/trends/indicators.php on line 14
+[06-May-2015 12:30:39 America/Denver] PHP Warning:  mkdir(): No such file or directory in /home5/jeehtove/public_html/provindex/trends/indicators.php on line 11
+[06-May-2015 12:30:39 America/Denver] PHP Warning:  mkdir(): File exists in /home5/jeehtove/public_html/provindex/trends/indicators.php on line 11
