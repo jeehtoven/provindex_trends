@@ -66,6 +66,7 @@ $feed->handle_content_type();
 		width: 50%;
 		margin: 0 auto;
 	}
+<<<<<<< HEAD
 	
 	#menu {
     width: 1400px;
@@ -119,6 +120,8 @@ padding: 20px;
 		
 }
 
+=======
+>>>>>>> origin/master
 	</style>
  
 
@@ -148,6 +151,7 @@ padding: 20px;
  </script>
 </head>
 <body>
+<<<<<<< HEAD
 <div id="menu">
 <ul>
 <li><a href="../../index.php">Home</a></li>
@@ -159,6 +163,9 @@ padding: 20px;
 </div>
 <br><br>
 <center><img src="../images/beer.jpg"></center>
+=======
+<img src="../images/beer.jpg">
+>>>>>>> origin/master
 <center>
 <br><br>
 <div id="ticker">
@@ -214,7 +221,11 @@ padding: 20px;
 	
 	
 	</center>
+<<<<<<< HEAD
  <br><br>
 <div id="copyright">Copyright 2015 Provindex, Inc.</div>
+=======
+ 
+>>>>>>> origin/master
 </body>
 </html>

@@ -12,7 +12,11 @@ $feed = new SimplePie();
 $feed->set_cache_location($_SERVER['DOCUMENT_ROOT'] . '/trends/cache/');
  
 // Set the feed to process.
+<<<<<<< HEAD
 $feed->set_feed_url('http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&q=bike_fatalities&output=rss');
+=======
+$feed->set_feed_url('http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&q=beer+sales&output=rss');
+>>>>>>> origin/master
  
 // Run SimplePie.
 $feed->init();
@@ -26,7 +30,11 @@ $feed->handle_content_type();
  
 <html xmlns="
 <head>
+<<<<<<< HEAD
 	<title>Provindex Trends: Bike Fatalities</title>
+=======
+	<title>Provindex Trends: Beer Sales</title>
+>>>>>>> origin/master
  
  
 	<style type="text/css">
@@ -62,6 +70,7 @@ $feed->handle_content_type();
 		float: right;
 	}
 	
+<<<<<<< HEAD
 	#ticker {
 		width: 50%;
 		margin: 0 auto;
@@ -122,6 +131,11 @@ padding: 20px;
 	</style>
  
 
+=======
+	</style>
+ 
+</head>
+>>>>>>> origin/master
  <script src="tagcanvas.js" type="text/javascript"></script>
     <script type="text/javascript">
       window.onload = function() {
@@ -139,6 +153,7 @@ padding: 20px;
         }
       };
     </script>
+<<<<<<< HEAD
 	<script src="http://richhollis.github.com/vticker/js/jquery-1.7.2.min.js"></script>
 <script src="jquery.vticker.js" type="text/javascript"> </script>
 	<script type="text/javascript">
@@ -186,6 +201,12 @@ padding: 20px;
 	</div>
 <br><br><div id="tweets">
 <a class="twitter-timeline" href="https://twitter.com/search?q=bike%20fatalities" data-widget-id="593547137775964161">Tweets about bike fatalities</a>
+=======
+<body>
+<center><img src="../images/beer.jpg">
+<br><br><div id="tweets">
+<a class="twitter-timeline" href="https://twitter.com/search?q=beer" data-widget-id="593511238921023488">Tweets about beer</a>
+>>>>>>> origin/master
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
 
 	<div class="header">
@@ -196,10 +217,14 @@ padding: 20px;
 	<?php
 	/*
 	Here, we'll loop through all of the items in the feed, and $item represents the current item in the loop.
+<<<<<<< HEAD
 	First, we'll create an array for the headlines.
 	*/
 	
 	
+=======
+	*/
+>>>>>>> origin/master
 	foreach ($feed->get_items() as $item):
 	?>
  
@@ -211,10 +236,29 @@ padding: 20px;
  
 	<?php endforeach; ?></center>
 	<center>
+<<<<<<< HEAD
 	
 	
 	</center>
  <br><br>
 <div id="copyright">Copyright 2015 Provindex, Inc.</div>
+=======
+	<?php foreach ($feed->get_items() as $item):
+	?>
+	<div id="myCanvasContainer">
+      <canvas width="300" height="300" id="myCanvas">
+        <p>Anything in here will be replaced on browsers that support the canvas element</p>
+      </canvas>
+    </div>
+    <div id="tags">
+      <ul>
+        <li><a href="<?php echo $item->get_permalink(); ?>" target="_blank"><?php echo $item->get_title(); ?></a></li>
+        </li>
+      </ul>
+    </div>
+	<?php endforeach; ?>
+	</center>
+ 
+>>>>>>> origin/master
 </body>
 </html>

@@ -1,5 +1,6 @@
 <html>
 <title>Provindex Trends</title>
+<<<<<<< HEAD
 <style type="text/css">
 #menu {
     width: 1400px;
@@ -64,6 +65,10 @@ padding: 20px;
 </div>
 	<br><br><br><br>
 	<center><h1>Provindex Trends</h1><br>These are unusual indicators that give a perspective of our economy. Click an economic indicator to get more information, including tweets, news feeds, and headlines.</center><br>
+=======
+<body>
+	<br><br><br><br>
+>>>>>>> origin/master
 <?php
 
 //Define image directory
@@ -80,8 +85,12 @@ for ($i=0; $i < count($images); ++$i)	{
 	if ($images[$i] == "..") {continue;}
 			
 	//else {
+<<<<<<< HEAD
 			//echo "<a href='./" . trim($images[$i],".jpg") . "/'><img src='./images/" . $images[$i] . "'></a>&nbsp;&nbsp;";
 			echo "<a href='./" . substr($images[$i],0,-4) . "/'><img src='./images/" . $images[$i] . "'></a>&nbsp;&nbsp;";
+=======
+			echo "<a href='./" . trim($images[$i],".jpg") . "/'><img src='./images/" . $images[$i] . "'></a>&nbsp;&nbsp;";
+>>>>>>> origin/master
 			$count = $count + 1;
 			
 			//re-initialize count
@@ -93,7 +102,10 @@ for ($i=0; $i < count($images); ++$i)	{
 	}
 		
 ?>
+<<<<<<< HEAD
 <br><br>
 <div id="copyright">Copyright 2015 Provindex, Inc.</div>
+=======
+>>>>>>> origin/master
 </body>
 </html>

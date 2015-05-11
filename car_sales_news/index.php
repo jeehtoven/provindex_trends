@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 <?php
  
 // Make sure SimplePie is included. You may need to change this to match the location of autoloader.php
@@ -12,7 +16,11 @@ $feed = new SimplePie();
 $feed->set_cache_location($_SERVER['DOCUMENT_ROOT'] . '/trends/cache/');
  
 // Set the feed to process.
+<<<<<<< HEAD
 $feed->set_feed_url('http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&q=car+sales+news&output=rss');
+=======
+$feed->set_feed_url('http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&q=beer+sales&output=rss');
+>>>>>>> origin/master
  
 // Run SimplePie.
 $feed->init();
@@ -26,7 +34,11 @@ $feed->handle_content_type();
  
 <html xmlns="
 <head>
+<<<<<<< HEAD
 	<title>Provindex Trends: Car Sales News</title>
+=======
+	<title>Provindex Trends: Beer Sales</title>
+>>>>>>> origin/master
  
  
 	<style type="text/css">
@@ -62,6 +74,7 @@ $feed->handle_content_type();
 		float: right;
 	}
 	
+<<<<<<< HEAD
 	#ticker {
 		width: 50%;
 		margin: 0 auto;
@@ -121,6 +134,11 @@ padding: 20px;
 	</style>
  
 
+=======
+	</style>
+ 
+</head>
+>>>>>>> origin/master
  <script src="tagcanvas.js" type="text/javascript"></script>
     <script type="text/javascript">
       window.onload = function() {
@@ -138,6 +156,7 @@ padding: 20px;
         }
       };
     </script>
+<<<<<<< HEAD
 	<script src="http://richhollis.github.com/vticker/js/jquery-1.7.2.min.js"></script>
 <script src="jquery.vticker.js" type="text/javascript"> </script>
 	<script type="text/javascript">
@@ -185,6 +204,12 @@ padding: 20px;
 	</div>
 <br><br><div id="tweets">
 <a class="twitter-timeline" href="https://twitter.com/search?q=car%20sales%20news" data-widget-id="593978604863803392">Tweets about car sales news</a>
+=======
+<body>
+<center><img src="../images/beer.jpg">
+<br><br><div id="tweets">
+<a class="twitter-timeline" href="https://twitter.com/search?q=beer" data-widget-id="593511238921023488">Tweets about beer</a>
+>>>>>>> origin/master
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
 
 	<div class="header">
@@ -195,10 +220,14 @@ padding: 20px;
 	<?php
 	/*
 	Here, we'll loop through all of the items in the feed, and $item represents the current item in the loop.
+<<<<<<< HEAD
 	First, we'll create an array for the headlines.
 	*/
 	
 	
+=======
+	*/
+>>>>>>> origin/master
 	foreach ($feed->get_items() as $item):
 	?>
  
@@ -210,10 +239,42 @@ padding: 20px;
  
 	<?php endforeach; ?></center>
 	<center>
+<<<<<<< HEAD
 	
 	
 	</center>
  <br><br>
 <div id="copyright">Copyright 2015 Provindex, Inc.</div>
+=======
+	<?php foreach ($feed->get_items() as $item):
+	?>
+	<div id="myCanvasContainer">
+      <canvas width="300" height="300" id="myCanvas">
+        <p>Anything in here will be replaced on browsers that support the canvas element</p>
+      </canvas>
+    </div>
+    <div id="tags">
+      <ul>
+        <li><a href="<?php echo $item->get_permalink(); ?>" target="_blank"><?php echo $item->get_title(); ?></a></li>
+        </li>
+      </ul>
+    </div>
+	<?php endforeach; ?>
+	</center>
+ 
+=======
+<html>
+<title>Provindex Tweets</title>
+<body>
+	<br>
+	<br>
+	<center><h2>Tweets About Agriculture</h2><br><br><a class="twitter-timeline" href="https://twitter.com/search?q=agriculture" data-widget-id="593445376029532161">Tweets about agriculture</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></center>
+	<br>
+	<br>
+	<center><h2>Tweets About Infrastructure</h2><br><br><a class="twitter-timeline" href="https://twitter.com/search?q=infrastructure" data-widget-id="593448619572916224">Tweets about infrastructure</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></center>
+>>>>>>> origin/master
+>>>>>>> origin/master
 </body>
 </html>
