@@ -12,7 +12,7 @@ $feed = new SimplePie();
 $feed->set_cache_location($_SERVER['DOCUMENT_ROOT'] . '/trends/cache/');
  
 // Set the feed to process.
-$feed->set_feed_url('http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&q=beer+sales&output=rss');
+$feed->set_feed_url('http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&q=movie_ticket_sales&output=rss');
  
 // Run SimplePie.
 $feed->init();
@@ -26,7 +26,7 @@ $feed->handle_content_type();
  
 <html xmlns="
 <head>
-	<title>Provindex Trends: Beer Sales</title>
+	<title>Provindex Trends: Movie Ticket Sales</title>
  
  
 	<style type="text/css">
@@ -62,9 +62,66 @@ $feed->handle_content_type();
 		float: right;
 	}
 	
+	#ticker {
+		width: 50%;
+		margin: 0 auto;
+	}
+	
+#menu {
+    width: 1400px;
+    height: 35px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+	text-align: center;
+    text-shadow: 3px 2px 3px #333333;
+    background-color: #65AC34;
+    border-radius: 8px;
+	position:relative;
+    	
+}
+
+#menu ul {
+    height: auto;
+    padding: 8px 0px;
+    margin: 0px;
+}
+
+#menu li { 
+display: inline; 
+padding: 20px; 
+}
+
+#menu a {
+    text-decoration: none;
+    color: #040404;
+    padding: 8px 8px 8px 8px;
+}
+
+#menu a:hover {
+    color: #65AC34;
+    background-color: #040404;
+}
+
+#copyright {
+    width: 500px;
+    height: 20px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px #333333;
+    background-color: #65AC34;
+    border-radius: 8px;
+	position:relative;
+	right: -30%
+    
+		
+}
+
 	</style>
  
-</head>
+
  <script src="tagcanvas.js" type="text/javascript"></script>
     <script type="text/javascript">
       window.onload = function() {
@@ -82,10 +139,53 @@ $feed->handle_content_type();
         }
       };
     </script>
+	<script src="http://richhollis.github.com/vticker/js/jquery-1.7.2.min.js"></script>
+<script src="jquery.vticker.js" type="text/javascript"> </script>
+	<script type="text/javascript">
+	$(function() {
+	  $('#ticker').vTicker();
+	});
+ </script>
+</head>
 <body>
-<center><img src="../images/beer.jpg">
+<div id="menu">
+<ul>
+<li><a href="../../index.php">Home</a></li>
+<li><a href="../../aboutus.php">About Us</a></li>
+<li><a href="../../services.php">Services</a></li>
+<li><a href="../../trends/index.php">Trends</a></li>
+<li><a href="../../contactus.php">Contact Us</a></li>
+</ul>
+</div>
+<br><br>
+<center><img src="../images/movie_ticket_sales.jpg"></center>
+<center>
+<br><br>
+<div id="ticker">
+	  <ul>
+		<?php 
+
+		$headlines = array();
+		$headlink = array();
+		foreach ($feed->get_items() as $item):
+			$headlines[] = $item->get_title();
+			$headlink[] = $item->get_permalink();
+			//code placeholder
+		?>
+
+		<?php endforeach; ?>
+	<?php 
+
+	$arrlength = count($headlines);
+	$li_link = $item->get_permalink();
+	$li_title = $item->get_title();
+	for($x = 0; $x < $arrlength; $x++) {
+		echo "<li><a href='".$headlink[$x]."' target='_blank'>".$headlines[$x]."</a></li>";
+	}?>
+	</ul>
+	</div>
 <br><br><div id="tweets">
-<a class="twitter-timeline" href="https://twitter.com/search?q=beer" data-widget-id="593511238921023488">Tweets about beer</a>
+<a class="twitter-timeline" href="https://twitter.com/search?q=movie%20ticket%20sales" data-widget-id="593983310839324672">Tweets about movie ticket sales</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
 
 	<div class="header">
@@ -96,7 +196,10 @@ $feed->handle_content_type();
 	<?php
 	/*
 	Here, we'll loop through all of the items in the feed, and $item represents the current item in the loop.
+	First, we'll create an array for the headlines.
 	*/
+	
+	
 	foreach ($feed->get_items() as $item):
 	?>
  
@@ -108,21 +211,10 @@ $feed->handle_content_type();
  
 	<?php endforeach; ?></center>
 	<center>
-	<?php foreach ($feed->get_items() as $item):
-	?>
-	<div id="myCanvasContainer">
-      <canvas width="300" height="300" id="myCanvas">
-        <p>Anything in here will be replaced on browsers that support the canvas element</p>
-      </canvas>
-    </div>
-    <div id="tags">
-      <ul>
-        <li><a href="<?php echo $item->get_permalink(); ?>" target="_blank"><?php echo $item->get_title(); ?></a></li>
-        </li>
-      </ul>
-    </div>
-	<?php endforeach; ?>
+	
+	
 	</center>
- 
+ <br><br>
+<div id="copyright">Copyright 2015 Provindex, Inc.</div>
 </body>
 </html>

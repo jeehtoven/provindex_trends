@@ -62,7 +62,6 @@ $feed->handle_content_type();
 		float: right;
 	}
 	
-<<<<<<< HEAD
 	#ticker {
 		width: 50%;
 		margin: 0 auto;
@@ -122,11 +121,6 @@ padding: 20px;
 	</style>
  
 
-=======
-	</style>
- 
-</head>
->>>>>>> origin/master
  <script src="tagcanvas.js" type="text/javascript"></script>
     <script type="text/javascript">
       window.onload = function() {
@@ -144,7 +138,6 @@ padding: 20px;
         }
       };
     </script>
-<<<<<<< HEAD
 	<script src="http://richhollis.github.com/vticker/js/jquery-1.7.2.min.js"></script>
 <script src="jquery.vticker.js" type="text/javascript"> </script>
 	<script type="text/javascript">
@@ -190,10 +183,6 @@ padding: 20px;
 	}?>
 	</ul>
 	</div>
-=======
-<body>
-<center><img src="../images/asprin.jpg">
->>>>>>> origin/master
 <br><br><div id="tweets">
 <a class="twitter-timeline" href="https://twitter.com/search?q=aspirin" data-widget-id="593510302483947520">Tweets about aspirin</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
@@ -206,14 +195,10 @@ padding: 20px;
 	<?php
 	/*
 	Here, we'll loop through all of the items in the feed, and $item represents the current item in the loop.
-<<<<<<< HEAD
 	First, we'll create an array for the headlines.
 	*/
 	
 	
-=======
-	*/
->>>>>>> origin/master
 	foreach ($feed->get_items() as $item):
 	?>
  
@@ -225,29 +210,10 @@ padding: 20px;
  
 	<?php endforeach; ?></center>
 	<center>
-<<<<<<< HEAD
 	
 	
 	</center>
  <br><br>
 <div id="copyright">Copyright 2015 Provindex, Inc.</div>
-=======
-	<?php foreach ($feed->get_items() as $item):
-	?>
-	<div id="myCanvasContainer">
-      <canvas width="300" height="300" id="myCanvas">
-        <p>Anything in here will be replaced on browsers that support the canvas element</p>
-      </canvas>
-    </div>
-    <div id="tags">
-      <ul>
-        <li><a href="<?php echo $item->get_permalink(); ?>" target="_blank"><?php echo $item->get_title(); ?></a></li>
-        </li>
-      </ul>
-    </div>
-	<?php endforeach; ?>
-	</center>
- 
->>>>>>> origin/master
 </body>
 </html>
